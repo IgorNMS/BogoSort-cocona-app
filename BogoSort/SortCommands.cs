@@ -14,10 +14,10 @@ namespace BogoSort
             _stringService = stringService;
         }
         [Command("sort")]
-        public void Sort(string numbers)
+        public void Sort(int dalay, string announce, string numbers)
         {
             var listNumber = _stringService.ToListInt(numbers);
-            _sortService.BogoSort(listNumber);
+            _sortService.BogoSort(dalay, announce, listNumber);
         }
     }
 }

@@ -2,24 +2,24 @@
 {
     public interface ISortService
     {
-        public void BogoSort(List<int> numbers);
+        public void BogoSort(int dalay, string announce, List<int> numbers);
     }
     public class BogoService : ISortService
     {
-        public void BogoSort(List<int> numbers)
+        public void BogoSort(int dalay, string announce, List<int> numbers)
         {
             Console.WriteLine("Sorting...");
-            Bogo_sort(numbers, true, 0);
+            Bogo_sort(numbers, announce, dalay);
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
 
-        private static void Bogo_sort(List<int> list, bool announce, int delay)
+        private static void Bogo_sort(List<int> list, string announce, int delay)
         {
             int iteration = 0;
             while (!IsSorted(list))
             {
-                if (announce)
+                if (announce == "Y" || announce == "y")
                 {
                     Print_Iteration(list, iteration);
                 }
